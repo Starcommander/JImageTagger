@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+
+
+<BorderPane fx:controller="com.starcom.paint.ImageTaggerFrame"
+    xmlns:fx="http://javafx.com/fxml" prefHeight="200" prefWidth="320">
+
+  <top>
+    <GridPane
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+    styleClass="root">
+
+      <padding><Insets top="10" right="25" bottom="25" left="25"/></padding>
+
+ 		<GridPane fx:id="toolbar_paint" xmlns:fx="http://javafx.com/fxml" GridPane.columnIndex="0" GridPane.rowIndex="0" hgap="10" vgap="10" styleClass="root">
+
+		  <Button fx:id="loadBut" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#selectAction">
+		    <graphic>
+		      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+		        <image>
+		          <Image url="com/starcom/paint/icons/document_open.png" />
+		        </image>
+		      </ImageView>
+		    </graphic>
+		  </Button>
+		  
+		  <Button fx:id="saveBut" GridPane.columnIndex="3" GridPane.rowIndex="0" onAction="#selectAction">
+		    <graphic>
+		      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+		        <image>
+		          <Image url="com/starcom/paint/icons/document_save.png" />
+		        </image>
+		      </ImageView>
+		    </graphic>
+		  </Button>
+		</GridPane>
+    </GridPane>
+  </top>
+
+  <center>
+    <ScrollPane fx:id="scrollPane">
+      <VBox alignment="CENTER" minWidth="${scrollPane.viewportBounds.width}">
+        <HBox alignment="CENTER" minHeight="${scrollPane.viewportBounds.height}">
+          <Pane fx:id="pixpane" />
+        </HBox>
+      </VBox>
+    </ScrollPane>
+  </center>
+
+  <left>
+    <ScrollPane fx:id="scrollPaneList">
+      <Pane fx:id="pixlistpane" />
+    </ScrollPane>
+  </left>
+
+  <bottom>
+    <VBox alignment="CENTER">
+      <ScrollPane fx:id="scrollPaneTxt">
+        <Pane fx:id="txtpane" />
+      </ScrollPane>
+      <ProgressBar progress="0.0" fx:id="progressBar" />
+    </VBox>
+  </bottom>
+
+</BorderPane>
+
+    
