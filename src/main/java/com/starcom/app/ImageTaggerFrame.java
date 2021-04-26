@@ -1,4 +1,4 @@
-package com.starcom.paint;
+package com.starcom.app;
 
 import java.awt.MouseInfo;
 import java.awt.Point;
@@ -9,8 +9,8 @@ import java.util.HashMap;
 import com.starcom.paint.tools.ITool;
 import com.starcom.paint.tools.ITool.EventType;
 import com.starcom.paint.tools.SizeTool;
-import com.starcom.pix.ImageTagger;
-import com.starcom.system.ClipboardTool;
+import com.starcom.paint.PaintObject;
+import com.starcom.clipboard.ClipboardTool;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -348,7 +348,7 @@ public class ImageTaggerFrame
       if (changedFile==null) { showAlert(AlertType.ERROR, "Saving not possible, lost file name."); return; }
       try
       {
-        ImageTagger imageTagger = new ImageTagger();
+        com.starcom.pix.tagger.ImageTagger imageTagger = new com.starcom.pix.tagger.ImageTagger();
         String imageFile = changedFile;
         imageTagger.readMetadataFromFile(imageFile);
         imageTagger.getMetadataProp().put("comment", changedValue);
@@ -376,7 +376,7 @@ public class ImageTaggerFrame
     String txt = "";
     try
     {
-      ImageTagger imageTagger = new ImageTagger();
+      com.starcom.pix.tagger.ImageTagger imageTagger = new com.starcom.pix.tagger.ImageTagger();
       if (pix.getUrl().startsWith("file:"))
       {
         String imageFile = pix.getUrl().substring(5); // file:xxx

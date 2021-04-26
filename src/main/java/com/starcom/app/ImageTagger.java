@@ -1,11 +1,11 @@
-package com.starcom.paint;
+package com.starcom.app;
 
 import java.io.File;
 import java.util.List;
 
 import javafx.application.Application;
 import javafx.concurrent.Task;
-import javafx.embed.swing.SwingFXUtils;
+//import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,7 +16,7 @@ public class ImageTagger extends Application
 {
   public static void main(String[] args)
   {
-    Application.launch(BlitzPaint.class, args);
+    Application.launch(ImageTagger.class, args);
   }
 
   @Override
@@ -31,12 +31,12 @@ public class ImageTagger extends Application
 
   private static void showMainTagger(Stage stage, Application.Parameters pars, boolean b_force_shot) throws Exception
   {
-    FXMLLoader fxmlLoader = new FXMLLoader(BlitzPaint.class.getResource("ImageTagger.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(ImageTagger.class.getResource("ImageTagger.fxml"));
     Parent root = (Parent)fxmlLoader.load();
     ImageTaggerFrame frame = fxmlLoader.getController();
     stage.setTitle("### JBlitzPaint ImageTagger ###");
     stage.setScene(new Scene(root, 500, 400));
-    stage.getIcons().add(new Image(BlitzPaint.class.getResourceAsStream("icons/video_display.png")));
+    stage.getIcons().add(new Image(ImageTagger.class.getResourceAsStream("icons/video_display.png")));
     frame.onShowPre(stage);
     stage.show();
   }

@@ -9,7 +9,7 @@
 <?import javafx.scene.*?>
 
 
-<BorderPane fx:controller="com.starcom.paint.ImageTaggerFrame"
+<BorderPane fx:controller="com.starcom.app.ImageTaggerFrame"
     xmlns:fx="http://javafx.com/fxml" prefHeight="200" prefWidth="320">
 
   <top>
@@ -25,7 +25,7 @@
 		    <graphic>
 		      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
 		        <image>
-		          <Image url="com/starcom/paint/icons/document_open.png" />
+		          <Image url="com/starcom/app/icons/document_open.png" />
 		        </image>
 		      </ImageView>
 		    </graphic>
@@ -35,7 +35,7 @@
 		    <graphic>
 		      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
 		        <image>
-		          <Image url="com/starcom/paint/icons/document_save.png" />
+		          <Image url="com/starcom/app/icons/document_save.png" />
 		        </image>
 		      </ImageView>
 		    </graphic>
